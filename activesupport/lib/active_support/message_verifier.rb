@@ -111,7 +111,7 @@ module ActiveSupport
     # the secret, the original value cannot be extracted from the message.
     #
     #   verifier = ActiveSupport::MessageVerifier.new 's3Krit'
-    #   verifier.generate 'a private message' # => "BAhJIhRwcml2YXRlLW1lc3NhZ2UGOgZFVA==--e2d724331ebdee96a10fb99b089508d1c72bd772"
+    #   verifier.generate 'a private message' # => "BAhJIhZhIHByaXZhdGUgbWVzc2FnZQY6BkVU--a2a1232deaf49ba164ed0d0b43b3f17cf8026c46"
     def generate(value)
       data = encode(@serializer.dump(value))
       "#{data}--#{generate_digest(data)}"
